@@ -1,0 +1,697 @@
+
+Merging object attributes
+
+
+Merging program properties
+
+
+Discarded input sections
+
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_core_main.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_acpi.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_input.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_pci.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_timer.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_uart.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_drivers_xhci.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_gfx_console.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_gfx_font.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_gfx_logo.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_fs_ray64.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_lib_kprintf.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_lib_lib.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/kernel_mem_meminfo.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/os_shell_shell_fs.c.o
+ .comment       0x0000000000000000       0x13 tools/build/compilation/os_shell_shell.c.o
+ .note.gnu.property
+                0x0000000000000000        0x0 tools/build/compilation/os_shell_shell.c.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                . = 0x0
+
+.text           0x0000000000000000     0xecd0
+ *(.text.boot)
+ .text.boot     0x0000000000000000     0x1fbc tools/build/compilation/kernel_boot_boot.S.o
+                0x0000000000000000                __image_base
+                0x0000000000001000                _start
+                0x0000000000001078                halt
+                0x0000000000001080                kernel_entry
+ *(.text .text.*)
+ .text          0x0000000000001fbc        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ *fill*         0x0000000000001fbc        0x4 
+ .text          0x0000000000001fc0      0x150 tools/build/compilation/kernel_boot_boot_efi.c.o
+                0x0000000000001fc0                efi_main
+ *fill*         0x0000000000002110       0x10 
+ .text          0x0000000000002120      0x1e8 tools/build/compilation/kernel_core_main.c.o
+                0x0000000000002120                exception_report
+                0x0000000000002160                kmain
+ *fill*         0x0000000000002308       0x18 
+ .text          0x0000000000002320      0x214 tools/build/compilation/kernel_drivers_acpi.c.o
+                0x0000000000002320                acpi_rd32
+                0x0000000000002340                acpi_rd64
+                0x0000000000002380                acpi_find_table
+ *fill*         0x0000000000002534        0xc 
+ .text          0x0000000000002540       0x84 tools/build/compilation/kernel_drivers_blockdev.c.o
+                0x0000000000002540                blk_read
+                0x0000000000002564                blk_write
+                0x00000000000025a0                blk_write_unprotected
+ *fill*         0x00000000000025c4       0x1c 
+ .text          0x00000000000025e0      0x12c tools/build/compilation/kernel_drivers_input.c.o
+                0x00000000000025e0                input_init
+                0x00000000000026d0                input_getc_nb
+ *fill*         0x000000000000270c       0x14 
+ .text          0x0000000000002720      0x3f4 tools/build/compilation/kernel_drivers_keyboard.c.o
+                0x0000000000002720                kbd_report
+                0x0000000000002968                kbd_getc_nb
+                0x0000000000002a70                kbd_set_layout
+                0x0000000000002ae8                kbd_layout_name
+ *fill*         0x0000000000002b14        0xc 
+ .text          0x0000000000002b20      0x150 tools/build/compilation/kernel_drivers_pci.c.o
+                0x0000000000002b20                pci_init
+                0x0000000000002ba4                pci_find_class
+                0x0000000000002c60                pci_enable
+ *fill*         0x0000000000002c70       0x10 
+ .text          0x0000000000002c80       0x8c tools/build/compilation/kernel_drivers_ramdisk.c.o
+                0x0000000000002d00                ramdisk_dev
+ *fill*         0x0000000000002d0c       0x14 
+ .text          0x0000000000002d20       0x3c tools/build/compilation/kernel_drivers_timer.c.o
+                0x0000000000002d20                timer_ms
+ *fill*         0x0000000000002d5c        0x4 
+ .text          0x0000000000002d60       0xa0 tools/build/compilation/kernel_drivers_uart.c.o
+                0x0000000000002d60                uart_init
+                0x0000000000002d80                uart_putc
+                0x0000000000002de0                uart_getc_nb
+ .text          0x0000000000002e00     0x10a4 tools/build/compilation/kernel_drivers_xhci.c.o
+                0x00000000000033ec                xhci_poll
+                0x0000000000003400                xhci_init
+ *fill*         0x0000000000003ea4       0x1c 
+ .text          0x0000000000003ec0      0xbac tools/build/compilation/kernel_gfx_console.c.o
+                0x00000000000043e0                console_cursor_show
+                0x000000000000444c                console_clear
+                0x0000000000004460                console_putc
+                0x0000000000004900                console_set_color
+                0x0000000000004920                console_ready
+                0x000000000000492c                console_cols
+                0x0000000000004940                console_rows
+                0x000000000000494c                console_init
+ .text          0x0000000000004a6c        0x0 tools/build/compilation/kernel_gfx_font_data.S.o
+ *fill*         0x0000000000004a6c       0x14 
+ .text          0x0000000000004a80      0x438 tools/build/compilation/kernel_gfx_font.c.o
+                0x0000000000004a80                font_find
+                0x0000000000004ac8                font_load_psf
+                0x0000000000004e70                font_glyph
+                0x0000000000004e8c                font_pixel
+ .text          0x0000000000004eb8        0x0 tools/build/compilation/kernel_gfx_logo_data.S.o
+ *fill*         0x0000000000004eb8        0x8 
+ .text          0x0000000000004ec0       0x48 tools/build/compilation/kernel_gfx_logo.c.o
+                0x0000000000004ec0                logo_show
+ *fill*         0x0000000000004f08       0x18 
+ .text          0x0000000000004f20     0x20f8 tools/build/compilation/kernel_fs_ray64.c.o
+                0x0000000000005528                ray64_strerror
+                0x00000000000055e0                ray64_format
+                0x00000000000059c0                ray64_mount
+                0x0000000000005c20                ray64_mounted
+                0x0000000000005c2c                ray64_info
+                0x0000000000005d4c                ray64_theme
+                0x0000000000005d88                ray64_topic
+                0x0000000000005dc4                ray64_file
+                0x0000000000005e00                ray64_link
+                0x0000000000005e40                ray64_theme_find
+                0x0000000000005ee0                ray64_topic_find
+                0x0000000000005f90                ray64_topic_resolve
+                0x0000000000006120                ray64_theme_create
+                0x00000000000062e0                ray64_topic_create
+                0x000000000000640c                ray64_app_install
+                0x00000000000064e0                ray64_topic_file_count
+                0x0000000000006524                ray64_topic_delete
+                0x0000000000006608                ray64_find_in_topic
+                0x0000000000006620                ray64_save
+                0x0000000000006b0c                ray64_read
+                0x0000000000006cc0                ray64_link_file
+                0x0000000000006da0                ray64_unlink
+                0x0000000000006f40                ray64_sys_blocks
+                0x0000000000006f60                ray64_sys_read
+                0x0000000000006fc0                ray64_sys_write
+ *fill*         0x0000000000007018        0x8 
+ .text          0x0000000000007020      0x890 tools/build/compilation/kernel_lib_kprintf.c.o
+                0x000000000000718c                kputc
+                0x00000000000071c0                kputs
+                0x0000000000007210                kprintf
+ *fill*         0x00000000000078b0       0x10 
+ .text          0x00000000000078c0      0x140 tools/build/compilation/kernel_lib_lib.c.o
+                0x00000000000078c0                memset
+                0x00000000000078e0                memcpy
+                0x0000000000007900                memmove
+                0x0000000000007960                memcmp
+                0x00000000000079a0                strlen
+                0x00000000000079c8                strcmp
+ .text          0x0000000000007a00       0xec tools/build/compilation/kernel_mem_meminfo.c.o
+                0x0000000000007a00                mem_init
+                0x0000000000007ac0                mem_usable_bytes
+                0x0000000000007acc                mem_top_address
+                0x0000000000007ae0                mem_region_count
+ *fill*         0x0000000000007aec       0x14 
+ .text          0x0000000000007b00     0x2318 tools/build/compilation/os_shell_shell_fs.c.o
+                0x0000000000009b88                fs_print_prompt
+                0x0000000000009c80                cmd_fs
+                0x0000000000009da0                cmd_cd
+                0x0000000000009de0                cmd_ls
+ *fill*         0x0000000000009e18        0x8 
+ .text          0x0000000000009e20      0x750 tools/build/compilation/os_shell_shell.c.o
+                0x000000000000a210                shell_run
+ *(.rodata .rodata.*)
+ .rodata        0x000000000000a570       0x20 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .rodata.str1.8
+                0x000000000000a590     0x1847 tools/build/compilation/kernel_core_main.c.o
+                                        0x159 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000bdd7        0x0 tools/build/compilation/kernel_drivers_acpi.c.o
+                                          0x9 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000bdd7        0x0 tools/build/compilation/kernel_drivers_input.c.o
+                                         0x85 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000bdd7        0x0 tools/build/compilation/kernel_drivers_keyboard.c.o
+                                        0x373 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000bdd7        0x0 tools/build/compilation/kernel_drivers_ramdisk.c.o
+                                          0x8 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000bdd7        0x0 tools/build/compilation/kernel_drivers_xhci.c.o
+                                         0x78 (size before relaxing)
+ *fill*         0x000000000000bdd7        0x1 
+ .rodata        0x000000000000bdd8       0x40 tools/build/compilation/kernel_gfx_console.c.o
+ .rodata        0x000000000000be18     0x2756 tools/build/compilation/kernel_gfx_font_data.S.o
+                0x000000000000be18                font_psf_start
+                0x000000000000e56e                font_psf_end
+ .rodata        0x000000000000e56e      0x74b tools/build/compilation/kernel_gfx_logo_data.S.o
+                0x000000000000e56e                logo_ansi_start
+                0x000000000000ecb9                logo_ansi_end
+ .rodata.str1.8
+                0x000000000000ecb9        0x0 tools/build/compilation/kernel_fs_ray64.c.o
+                                         0xd4 (size before relaxing)
+ *fill*         0x000000000000ecb9        0x7 
+ .rodata        0x000000000000ecc0       0x10 tools/build/compilation/kernel_fs_ray64.c.o
+ .rodata.str1.8
+                0x000000000000ecd0        0x0 tools/build/compilation/kernel_lib_kprintf.c.o
+                                         0x37 (size before relaxing)
+ .rodata.str1.8
+                0x000000000000ecd0        0x0 tools/build/compilation/os_shell_shell_fs.c.o
+                                        0xdea (size before relaxing)
+ .rodata.str1.8
+                0x000000000000ecd0        0x0 tools/build/compilation/os_shell_shell.c.o
+                                        0x3b7 (size before relaxing)
+                0x000000000000ecd0                __text_end = ABSOLUTE (.)
+
+.plt            0x000000000000ecd0        0x0
+ .plt           0x000000000000ecd0        0x0 tools/build/compilation/kernel_boot_boot.S.o
+                0x000000000000f000                . = ALIGN (0x1000)
+                0x000000000000f000                __data_start = ABSOLUTE (.)
+
+.data.rel.ro    0x000000000000f000     0x15a8
+ *(.data.rel.ro .data.rel.ro.*)
+ .data.rel.ro   0x000000000000f000        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ .data.rel.ro.local
+                0x000000000000f000     0x12f0 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .data.rel.ro.local
+                0x00000000000102f0      0x1b0 tools/build/compilation/os_shell_shell_fs.c.o
+ .data.rel.ro   0x00000000000104a0       0xa8 tools/build/compilation/os_shell_shell.c.o
+ .data.rel.ro.local
+                0x0000000000010548       0x60 tools/build/compilation/os_shell_shell.c.o
+
+.got            0x00000000000105a8      0x278
+ *(.got .got.plt)
+ .got           0x00000000000105a8      0x260 tools/build/compilation/kernel_boot_boot.S.o
+                0x00000000000105a8                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x0000000000010808       0x18 tools/build/compilation/kernel_boot_boot.S.o
+
+.data           0x0000000000010820       0x4c
+ *(.data .data.*)
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_core_main.c.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_drivers_acpi.c.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_drivers_input.c.o
+ .data          0x0000000000010820        0x0 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .data.rel.local
+                0x0000000000010820        0x8 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .data          0x0000000000010828        0x0 tools/build/compilation/kernel_drivers_pci.c.o
+ .data          0x0000000000010828        0x0 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .data.rel.local
+                0x0000000000010828       0x30 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .data          0x0000000000010858        0x0 tools/build/compilation/kernel_drivers_timer.c.o
+ .data          0x0000000000010858        0x0 tools/build/compilation/kernel_drivers_uart.c.o
+ .data          0x0000000000010858        0x4 tools/build/compilation/kernel_drivers_xhci.c.o
+ .data          0x000000000001085c        0x1 tools/build/compilation/kernel_gfx_console.c.o
+ .data          0x000000000001085d        0x0 tools/build/compilation/kernel_gfx_font_data.S.o
+ .data          0x000000000001085d        0x0 tools/build/compilation/kernel_gfx_font.c.o
+ .data          0x000000000001085d        0x0 tools/build/compilation/kernel_gfx_logo_data.S.o
+ .data          0x000000000001085d        0x0 tools/build/compilation/kernel_gfx_logo.c.o
+ *fill*         0x000000000001085d        0x3 
+ .data          0x0000000000010860        0x4 tools/build/compilation/kernel_fs_ray64.c.o
+ .data          0x0000000000010864        0x0 tools/build/compilation/kernel_lib_kprintf.c.o
+ .data          0x0000000000010864        0x0 tools/build/compilation/kernel_lib_lib.c.o
+ .data          0x0000000000010864        0x0 tools/build/compilation/kernel_mem_meminfo.c.o
+ .data          0x0000000000010864        0x8 tools/build/compilation/os_shell_shell_fs.c.o
+ .data          0x000000000001086c        0x0 tools/build/compilation/os_shell_shell.c.o
+
+.dynamic        0x0000000000010870      0x100
+ *(.dynamic)
+ .dynamic       0x0000000000010870      0x100 tools/build/compilation/kernel_boot_boot.S.o
+                0x0000000000010870                _DYNAMIC
+
+.dynsym         0x0000000000010970       0x48
+ *(.dynsym)
+ .dynsym        0x0000000000010970       0x48 tools/build/compilation/kernel_boot_boot.S.o
+
+.dynstr         0x00000000000109b8        0x1
+ *(.dynstr)
+ .dynstr        0x00000000000109b8        0x1 tools/build/compilation/kernel_boot_boot.S.o
+
+.hash           0x00000000000109c0       0x18
+ *(.hash)
+ .hash          0x00000000000109c0       0x18 tools/build/compilation/kernel_boot_boot.S.o
+ *(.gnu.hash)
+
+.rela.dyn       0x00000000000109d8     0x2a90
+                0x00000000000109d8                __rela_start = .
+ *(.rela.dyn)
+ *(.rela.*)
+ .rela.got      0x00000000000109d8      0x708 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.plt      0x00000000000110e0        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.bss      0x00000000000110e0        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.data.rel.ro
+                0x00000000000110e0      0x1f8 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.ifunc    0x00000000000112d8        0x0 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.data.rel.local
+                0x00000000000112d8       0x60 tools/build/compilation/kernel_boot_boot.S.o
+ .rela.data.rel.ro.local
+                0x0000000000011338     0x2130 tools/build/compilation/kernel_boot_boot.S.o
+                0x0000000000013468                __rela_end = .
+
+.pad            0x0000000000013468      0xb98
+                0x0000000000013468        0x1 BYTE 0x0
+                0x0000000000014000                . = ALIGN (0x1000)
+ *fill*         0x0000000000013469      0xb97 
+                0x0000000000014000                __raw_end = ABSOLUTE (.)
+
+.bss            0x0000000000014000   0x52d000
+                0x0000000000014000                __bss_start = .
+ *(.bss .bss.*)
+ .bss           0x0000000000014000    0x10000 tools/build/compilation/kernel_boot_boot.S.o
+                0x0000000000024000                kstack_top
+ .bss           0x0000000000024000    0x40040 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .bss           0x0000000000064040        0x0 tools/build/compilation/kernel_core_main.c.o
+ .bss           0x0000000000064040        0x0 tools/build/compilation/kernel_drivers_acpi.c.o
+ .bss           0x0000000000064040        0x0 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .bss           0x0000000000064040        0x0 tools/build/compilation/kernel_drivers_input.c.o
+ .bss           0x0000000000064040       0xb0 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .bss           0x00000000000640f0        0xa tools/build/compilation/kernel_drivers_pci.c.o
+ *fill*         0x00000000000640fa      0xf06 
+ .bss           0x0000000000065000   0x400000 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .bss           0x0000000000465000        0x0 tools/build/compilation/kernel_drivers_timer.c.o
+ .bss           0x0000000000465000        0x0 tools/build/compilation/kernel_drivers_uart.c.o
+ .bss           0x0000000000465000    0x27000 tools/build/compilation/kernel_drivers_xhci.c.o
+ .bss           0x000000000048c000    0x60098 tools/build/compilation/kernel_gfx_console.c.o
+ .bss           0x00000000004ec098        0x0 tools/build/compilation/kernel_gfx_font_data.S.o
+ .bss           0x00000000004ec098    0x20000 tools/build/compilation/kernel_gfx_font.c.o
+ .bss           0x000000000050c098        0x0 tools/build/compilation/kernel_gfx_logo_data.S.o
+ .bss           0x000000000050c098        0x0 tools/build/compilation/kernel_gfx_logo.c.o
+ .bss           0x000000000050c098    0x34810 tools/build/compilation/kernel_fs_ray64.c.o
+ .bss           0x00000000005408a8        0x0 tools/build/compilation/kernel_lib_kprintf.c.o
+ .bss           0x00000000005408a8        0x0 tools/build/compilation/kernel_lib_lib.c.o
+ .bss           0x00000000005408a8       0x14 tools/build/compilation/kernel_mem_meminfo.c.o
+ .bss           0x00000000005408bc        0x0 tools/build/compilation/os_shell_shell_fs.c.o
+ .bss           0x00000000005408bc        0x0 tools/build/compilation/os_shell_shell.c.o
+ *(COMMON)
+                0x0000000000541000                . = ALIGN (0x1000)
+ *fill*         0x00000000005408bc      0x744 
+                0x0000000000541000                __bss_end = .
+                0x000000000000dcd0                __text_vsize = ABSOLUTE ((__text_end - 0x1000))
+                0x000000000000e000                __text_rsize = ABSOLUTE ((__data_start - 0x1000))
+                0x0000000000532000                __data_vsize = ABSOLUTE ((__bss_end - __data_start))
+                0x0000000000005000                __data_rsize = ABSOLUTE ((__raw_end - __data_start))
+                0x0000000000541000                __image_size = ABSOLUTE (__bss_end)
+
+.dynbss         0x0000000000541000        0x0
+ .dynbss        0x0000000000541000        0x0 tools/build/compilation/kernel_boot_boot.S.o
+
+/DISCARD/
+ *(.comment)
+ *(.note*)
+ *(.eh_frame*)
+ *(.interp)
+ *(.gnu.*)
+LOAD tools/build/compilation/kernel_boot_boot.S.o
+LOAD tools/build/compilation/kernel_boot_boot_efi.c.o
+LOAD tools/build/compilation/kernel_core_main.c.o
+LOAD tools/build/compilation/kernel_drivers_acpi.c.o
+LOAD tools/build/compilation/kernel_drivers_blockdev.c.o
+LOAD tools/build/compilation/kernel_drivers_input.c.o
+LOAD tools/build/compilation/kernel_drivers_keyboard.c.o
+LOAD tools/build/compilation/kernel_drivers_pci.c.o
+LOAD tools/build/compilation/kernel_drivers_ramdisk.c.o
+LOAD tools/build/compilation/kernel_drivers_timer.c.o
+LOAD tools/build/compilation/kernel_drivers_uart.c.o
+LOAD tools/build/compilation/kernel_drivers_xhci.c.o
+LOAD tools/build/compilation/kernel_gfx_console.c.o
+LOAD tools/build/compilation/kernel_gfx_font_data.S.o
+LOAD tools/build/compilation/kernel_gfx_font.c.o
+LOAD tools/build/compilation/kernel_gfx_logo_data.S.o
+LOAD tools/build/compilation/kernel_gfx_logo.c.o
+LOAD tools/build/compilation/kernel_fs_ray64.c.o
+LOAD tools/build/compilation/kernel_lib_kprintf.c.o
+LOAD tools/build/compilation/kernel_lib_lib.c.o
+LOAD tools/build/compilation/kernel_mem_meminfo.c.o
+LOAD tools/build/compilation/os_shell_shell_fs.c.o
+LOAD tools/build/compilation/os_shell_shell.c.o
+OUTPUT(tools/build/kernel.elf elf64-littleaarch64)
+LOAD linker stubs
+
+.debug_line     0x0000000000000000     0x9282
+ .debug_line    0x0000000000000000       0xaf tools/build/compilation/kernel_boot_boot.S.o
+ .debug_line    0x00000000000000af      0x1f2 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_line    0x00000000000002a1      0x160 tools/build/compilation/kernel_core_main.c.o
+ .debug_line    0x0000000000000401      0x281 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_line    0x0000000000000682       0xc0 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_line    0x0000000000000742      0x18b tools/build/compilation/kernel_drivers_input.c.o
+ .debug_line    0x00000000000008cd      0x503 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_line    0x0000000000000dd0      0x1e1 tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_line    0x0000000000000fb1       0xb8 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_line    0x0000000000001069       0x69 tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_line    0x00000000000010d2       0xcc tools/build/compilation/kernel_drivers_uart.c.o
+ .debug_line    0x000000000000119e     0x1495 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_line    0x0000000000002633      0xdc6 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_line    0x00000000000033f9      0x542 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_line    0x000000000000393b       0xa5 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_line    0x00000000000039e0     0x1ef5 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_line    0x00000000000058d5      0x74d tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_line    0x0000000000006022      0x2a5 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_line    0x00000000000062c7      0x12e tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_line    0x00000000000063f5     0x2592 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_line    0x0000000000008987      0x8fb tools/build/compilation/os_shell_shell.c.o
+
+.debug_line_str
+                0x0000000000000000      0x356
+ .debug_line_str
+                0x0000000000000000      0x356 tools/build/compilation/kernel_boot_boot.S.o
+                                         0x3a (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_boot_boot_efi.c.o
+                                         0xf4 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_core_main.c.o
+                                        0x18a (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_acpi.c.o
+                                         0xdd (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_blockdev.c.o
+                                         0xf4 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_input.c.o
+                                        0x132 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_keyboard.c.o
+                                         0xf1 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_pci.c.o
+                                         0xe1 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_ramdisk.c.o
+                                        0x10f (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_timer.c.o
+                                         0xe0 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_uart.c.o
+                                         0xdd (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_drivers_xhci.c.o
+                                        0x10e (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_gfx_console.c.o
+                                        0x10f (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_gfx_font.c.o
+                                         0xfa (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_gfx_logo.c.o
+                                         0x8e (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_fs_ray64.c.o
+                                        0x116 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_lib_kprintf.c.o
+                                        0x11d (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_lib_lib.c.o
+                                         0xdb (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/kernel_mem_meminfo.c.o
+                                         0xfb (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/os_shell_shell_fs.c.o
+                                        0x150 (size before relaxing)
+ .debug_line_str
+                0x0000000000000356        0x0 tools/build/compilation/os_shell_shell.c.o
+                                        0x140 (size before relaxing)
+
+.debug_info     0x0000000000000000     0xeb99
+ .debug_info    0x0000000000000000       0x29 tools/build/compilation/kernel_boot_boot.S.o
+ .debug_info    0x0000000000000029      0x9a7 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_info    0x00000000000009d0      0x663 tools/build/compilation/kernel_core_main.c.o
+ .debug_info    0x0000000000001033      0x375 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_info    0x00000000000013a8      0x28e tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_info    0x0000000000001636      0x390 tools/build/compilation/kernel_drivers_input.c.o
+ .debug_info    0x00000000000019c6      0x4ec tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_info    0x0000000000001eb2      0x2f8 tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_info    0x00000000000021aa      0x2ec tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_info    0x0000000000002496       0xbb tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_info    0x0000000000002551      0x117 tools/build/compilation/kernel_drivers_uart.c.o
+ .debug_info    0x0000000000002668     0x266b tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_info    0x0000000000004cd3      0xed8 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_info    0x0000000000005bab      0x6b6 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_info    0x0000000000006261       0xc0 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_info    0x0000000000006321     0x3262 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_info    0x0000000000009583      0x954 tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_info    0x0000000000009ed7      0x2e4 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_info    0x000000000000a1bb      0x2ab tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_info    0x000000000000a466     0x3c64 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_info    0x000000000000e0ca      0xacf tools/build/compilation/os_shell_shell.c.o
+
+.debug_abbrev   0x0000000000000000     0x2dea
+ .debug_abbrev  0x0000000000000000       0x14 tools/build/compilation/kernel_boot_boot.S.o
+ .debug_abbrev  0x0000000000000014      0x238 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_abbrev  0x000000000000024c      0x1b9 tools/build/compilation/kernel_core_main.c.o
+ .debug_abbrev  0x0000000000000405      0x1f2 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_abbrev  0x00000000000005f7       0xf3 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_abbrev  0x00000000000006ea      0x173 tools/build/compilation/kernel_drivers_input.c.o
+ .debug_abbrev  0x000000000000085d      0x246 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_abbrev  0x0000000000000aa3      0x1ab tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_abbrev  0x0000000000000c4e      0x155 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_abbrev  0x0000000000000da3       0x70 tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_abbrev  0x0000000000000e13       0xcb tools/build/compilation/kernel_drivers_uart.c.o
+ .debug_abbrev  0x0000000000000ede      0x517 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_abbrev  0x00000000000013f5      0x3e6 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_abbrev  0x00000000000017db      0x269 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_abbrev  0x0000000000001a44       0xb3 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_abbrev  0x0000000000001af7      0x5b2 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_abbrev  0x00000000000020a9      0x27e tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_abbrev  0x0000000000002327       0xd1 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_abbrev  0x00000000000023f8      0x111 tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_abbrev  0x0000000000002509      0x5c4 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_abbrev  0x0000000000002acd      0x31d tools/build/compilation/os_shell_shell.c.o
+
+.debug_aranges  0x0000000000000000      0x3f0
+ .debug_aranges
+                0x0000000000000000       0x30 tools/build/compilation/kernel_boot_boot.S.o
+ .debug_aranges
+                0x0000000000000030       0x30 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_aranges
+                0x0000000000000060       0x30 tools/build/compilation/kernel_core_main.c.o
+ .debug_aranges
+                0x0000000000000090       0x30 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_aranges
+                0x00000000000000c0       0x30 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_aranges
+                0x00000000000000f0       0x30 tools/build/compilation/kernel_drivers_input.c.o
+ .debug_aranges
+                0x0000000000000120       0x30 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_aranges
+                0x0000000000000150       0x30 tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_aranges
+                0x0000000000000180       0x30 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_aranges
+                0x00000000000001b0       0x30 tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_aranges
+                0x00000000000001e0       0x30 tools/build/compilation/kernel_drivers_uart.c.o
+ .debug_aranges
+                0x0000000000000210       0x30 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_aranges
+                0x0000000000000240       0x30 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_aranges
+                0x0000000000000270       0x30 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_aranges
+                0x00000000000002a0       0x30 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_aranges
+                0x00000000000002d0       0x30 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_aranges
+                0x0000000000000300       0x30 tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_aranges
+                0x0000000000000330       0x30 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_aranges
+                0x0000000000000360       0x30 tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_aranges
+                0x0000000000000390       0x30 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_aranges
+                0x00000000000003c0       0x30 tools/build/compilation/os_shell_shell.c.o
+
+.debug_str      0x0000000000000000     0x1539
+ .debug_str     0x0000000000000000     0x1539 tools/build/compilation/kernel_boot_boot.S.o
+                                         0x46 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_boot_boot_efi.c.o
+                                        0x64a (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_core_main.c.o
+                                        0x3ae (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_acpi.c.o
+                                        0x176 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_blockdev.c.o
+                                        0x16e (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_input.c.o
+                                        0x21b (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_keyboard.c.o
+                                        0x202 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_pci.c.o
+                                        0x1a1 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_ramdisk.c.o
+                                        0x1a0 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_timer.c.o
+                                        0x124 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_uart.c.o
+                                        0x13e (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_drivers_xhci.c.o
+                                        0x3d7 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_gfx_console.c.o
+                                        0x457 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_gfx_font.c.o
+                                        0x20d (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_gfx_logo.c.o
+                                         0xdb (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_fs_ray64.c.o
+                                        0x688 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_lib_kprintf.c.o
+                                        0x1ce (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_lib_lib.c.o
+                                        0x160 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/kernel_mem_meminfo.c.o
+                                        0x235 (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/os_shell_shell_fs.c.o
+                                        0x6cc (size before relaxing)
+ .debug_str     0x0000000000001539        0x0 tools/build/compilation/os_shell_shell.c.o
+                                        0x35a (size before relaxing)
+
+.debug_loclists
+                0x0000000000000000     0x8277
+ .debug_loclists
+                0x0000000000000000       0xc3 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_loclists
+                0x00000000000000c3       0x9c tools/build/compilation/kernel_core_main.c.o
+ .debug_loclists
+                0x000000000000015f      0x268 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_loclists
+                0x00000000000003c7      0x110 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_loclists
+                0x00000000000004d7       0x89 tools/build/compilation/kernel_drivers_input.c.o
+ .debug_loclists
+                0x0000000000000560      0x362 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_loclists
+                0x00000000000008c2      0x248 tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_loclists
+                0x0000000000000b0a       0x86 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_loclists
+                0x0000000000000b90       0x1c tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_loclists
+                0x0000000000000bac     0x1661 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_loclists
+                0x000000000000220d      0xabe tools/build/compilation/kernel_gfx_console.c.o
+ .debug_loclists
+                0x0000000000002ccb      0x42b tools/build/compilation/kernel_gfx_font.c.o
+ .debug_loclists
+                0x00000000000030f6       0x24 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_loclists
+                0x000000000000311a     0x21f5 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_loclists
+                0x000000000000530f      0x53a tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_loclists
+                0x0000000000005849      0x3ab tools/build/compilation/kernel_lib_lib.c.o
+ .debug_loclists
+                0x0000000000005bf4       0xa7 tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_loclists
+                0x0000000000005c9b     0x20e9 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_loclists
+                0x0000000000007d84      0x4f3 tools/build/compilation/os_shell_shell.c.o
+
+.debug_rnglists
+                0x0000000000000000     0x12b7
+ .debug_rnglists
+                0x0000000000000000       0x60 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_rnglists
+                0x0000000000000060       0x4e tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_rnglists
+                0x00000000000000ae       0xc9 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_rnglists
+                0x0000000000000177       0x7a tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_rnglists
+                0x00000000000001f1      0x321 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_rnglists
+                0x0000000000000512      0x153 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_rnglists
+                0x0000000000000665       0xb6 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_rnglists
+                0x000000000000071b       0x16 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_rnglists
+                0x0000000000000731      0x391 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_rnglists
+                0x0000000000000ac2       0xd2 tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_rnglists
+                0x0000000000000b94       0x18 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_rnglists
+                0x0000000000000bac       0x21 tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_rnglists
+                0x0000000000000bcd      0x60c tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_rnglists
+                0x00000000000011d9       0xde tools/build/compilation/os_shell_shell.c.o
+
+.debug_frame    0x0000000000000000     0x1e90
+ .debug_frame   0x0000000000000000       0x40 tools/build/compilation/kernel_boot_boot_efi.c.o
+ .debug_frame   0x0000000000000040       0x60 tools/build/compilation/kernel_core_main.c.o
+ .debug_frame   0x00000000000000a0       0x78 tools/build/compilation/kernel_drivers_acpi.c.o
+ .debug_frame   0x0000000000000118       0x58 tools/build/compilation/kernel_drivers_blockdev.c.o
+ .debug_frame   0x0000000000000170       0x78 tools/build/compilation/kernel_drivers_input.c.o
+ .debug_frame   0x00000000000001e8       0xc0 tools/build/compilation/kernel_drivers_keyboard.c.o
+ .debug_frame   0x00000000000002a8       0x78 tools/build/compilation/kernel_drivers_pci.c.o
+ .debug_frame   0x0000000000000320       0x78 tools/build/compilation/kernel_drivers_ramdisk.c.o
+ .debug_frame   0x0000000000000398       0x28 tools/build/compilation/kernel_drivers_timer.c.o
+ .debug_frame   0x00000000000003c0       0x58 tools/build/compilation/kernel_drivers_uart.c.o
+ .debug_frame   0x0000000000000418      0x198 tools/build/compilation/kernel_drivers_xhci.c.o
+ .debug_frame   0x00000000000005b0      0x1f8 tools/build/compilation/kernel_gfx_console.c.o
+ .debug_frame   0x00000000000007a8       0x80 tools/build/compilation/kernel_gfx_font.c.o
+ .debug_frame   0x0000000000000828       0x40 tools/build/compilation/kernel_gfx_logo.c.o
+ .debug_frame   0x0000000000000868      0x890 tools/build/compilation/kernel_fs_ray64.c.o
+ .debug_frame   0x00000000000010f8      0x138 tools/build/compilation/kernel_lib_kprintf.c.o
+ .debug_frame   0x0000000000001230       0xa0 tools/build/compilation/kernel_lib_lib.c.o
+ .debug_frame   0x00000000000012d0       0x70 tools/build/compilation/kernel_mem_meminfo.c.o
+ .debug_frame   0x0000000000001340      0x998 tools/build/compilation/os_shell_shell_fs.c.o
+ .debug_frame   0x0000000000001cd8      0x1b8 tools/build/compilation/os_shell_shell.c.o
